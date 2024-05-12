@@ -83,9 +83,7 @@ public class paymentUI extends JFrame{
 
         });
     }
-    publiv void checkBalance(){
 
-    }
     public void updateBalance() {
         String SQL = "UPDATE users SET balance = ? WHERE userid = ?";
         try (Connection conn = new DatabaseConnection().connect2();
