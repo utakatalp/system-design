@@ -10,7 +10,7 @@ public class removeResidentUI extends JFrame{
     private JButton removeButton;
     private JPanel mainPanel;
 
-    removeResidentUI(){
+    public removeResidentUI(){
         setContentPane(mainPanel);
         setTitle("Simple GUI App");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -20,31 +20,31 @@ public class removeResidentUI extends JFrame{
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                removeResident();
+            }
+        });
+    }
 
-                Connection conn = new DatabaseConnection().connect2();
+    public void removeResident() {
+        Connection conn = new DatabaseConnection().connect2();
 
-                String sql = "DELETE FROM users WHERE apartmentnumber = ?;";
+        String sql = "DELETE FROM users WHERE apartmentnumber = ?;";
 
-                try {
-                    PreparedStatement pstmt = conn.prepareStatement(sql);
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
 
-                    pstmt.setString(1,apartmentNumber.getText());
+            pstmt.setString(1,apartmentNumber.getText());
 
-                    int etkilenenSatirSayisi = pstmt.executeUpdate();
+            int etkilenenSatirSayisi = pstmt.executeUpdate();
 
-                    if (etkilenenSatirSayisi > 0) {
-                        System.out.println("Site sakini başarıyla silindi.");
-                    } else {
-                        System.out.println("Site sakini silinemedi.");
-                    }
-
-                } catch (SQLException e2) {
-                    e2.printStackTrace();
-                }
-
+            if (etkilenenSatirSayisi > 0) {
+                System.out.println("Site sakini başarıyla silindi.");
+            } else {
+                System.out.println("Site sakini silinemedi.");
             }
 
-
-        });
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
     }
 }

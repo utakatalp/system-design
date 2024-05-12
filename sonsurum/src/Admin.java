@@ -1,5 +1,4 @@
 public class Admin {
-    //asdadasd23
     private String username;
     private String password;
     public Admin(String username, String password)
