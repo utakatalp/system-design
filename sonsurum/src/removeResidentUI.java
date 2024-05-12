@@ -9,7 +9,7 @@ public class removeResidentUI extends JFrame{
     private JTextField apartmentNumber;
     private JButton removeButton;
     private JPanel mainPanel;
-
+    //asdds
     public removeResidentUI(){
         setContentPane(mainPanel);
         setTitle("Simple GUI App");
