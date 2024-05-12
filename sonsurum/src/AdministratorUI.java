@@ -46,12 +46,7 @@ public class AdministratorUI extends JFrame{
                 new updateDueUI();
             }
         });
-        updateDueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new updateDueUI();
-            }
-        });
+
         dischargeResidentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
