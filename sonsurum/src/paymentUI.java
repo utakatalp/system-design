@@ -20,7 +20,7 @@ public class paymentUI extends JFrame{
     public paymentUI(User user) throws SQLException {
         this.user=user;
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300,300);
         setLocationRelativeTo(null);

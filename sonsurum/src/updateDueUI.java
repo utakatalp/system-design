@@ -9,7 +9,7 @@ public class updateDueUI extends JFrame{
     private JButton güncelleButton;
     updateDueUI(){
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,300);
         setLocationRelativeTo(null);

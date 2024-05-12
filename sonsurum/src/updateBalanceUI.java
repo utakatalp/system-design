@@ -13,7 +13,7 @@ public class updateBalanceUI extends JFrame{
     public updateBalanceUI(User user){
         this.user=user;
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,300);
         setLocationRelativeTo(null);

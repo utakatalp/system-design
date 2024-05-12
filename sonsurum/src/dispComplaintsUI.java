@@ -11,7 +11,7 @@ public class dispComplaintsUI extends JFrame{
 
     public dispComplaintsUI() {
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 900);
         setLocationRelativeTo(null);

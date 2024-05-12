@@ -11,7 +11,7 @@ public class AdminLoginUI extends JFrame{
 
     AdminLoginUI(){
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600,300);
         setLocationRelativeTo(null);

@@ -16,7 +16,7 @@ public class AdministratorUI extends JFrame{
     AdministratorUI(){
 
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300,400);
         setLocationRelativeTo(null);

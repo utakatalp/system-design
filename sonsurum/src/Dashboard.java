@@ -9,7 +9,7 @@ public class Dashboard extends JFrame{
     private JButton kullanıcıButton;
     Dashboard(){
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300,300);
         setLocationRelativeTo(null);

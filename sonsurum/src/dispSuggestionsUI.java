@@ -7,7 +7,7 @@ public class dispSuggestionsUI extends JFrame{
     private DefaultListModel<String> listModel1;
     public dispSuggestionsUI(){
         setContentPane(mainPanel);
-        setTitle("Simple GUI App");
+        setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,900);
         setLocationRelativeTo(null);
