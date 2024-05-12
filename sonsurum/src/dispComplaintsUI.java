@@ -16,9 +16,11 @@ public class dispComplaintsUI extends JFrame{
         setSize(500, 900);
         setLocationRelativeTo(null);
         setVisible(true);
-        listModel = new DefaultListModel<>();
-        ;
+        showAllComplaints();
+    }
 
+    public void showAllComplaints() {
+        listModel = new DefaultListModel<>();
 
         Connection conn = new DatabaseConnection().connect2();
 
@@ -48,13 +50,11 @@ public class dispComplaintsUI extends JFrame{
         String SQL = "SELECT * FROM complaints WHERE messageid = ?";
         for (int i = 1; i < k+1; i++) {
             try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-
                 pstmt.setInt(1, i);
 
                 ResultSet rs = pstmt.executeQuery();
                 if (rs.next()) {
                     listModel.addElement(rs.getString("complaint"));
-
                 }
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
