@@ -15,7 +15,6 @@ public class paymentUI extends JFrame{
     private JButton payButton;
     private JLabel balanceLabel;
     private selectFromDatabase sfd;
-
     private Debt selectedDebt;
     private User user;
     public paymentUI(User user) throws SQLException {
@@ -57,10 +56,7 @@ public class paymentUI extends JFrame{
                         dispose();
                     }
                 }
-
-                }
-
-
+            }
         });
     }
     public void payingViaComboBox(){
@@ -79,7 +75,6 @@ public class paymentUI extends JFrame{
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         } // Giriş başarılıysa pencereyi kapat
-
     }
     public void updateBalance() {
         String SQL = "UPDATE users SET balance = ? WHERE userid = ?";
@@ -111,7 +106,6 @@ public class paymentUI extends JFrame{
         try (Connection conn = new DatabaseConnection().connect2();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {
 
-
             pstmt.setInt(1, selectedDebt.getId());
 
             int affectedRows = pstmt.executeUpdate();
@@ -124,5 +118,4 @@ public class paymentUI extends JFrame{
             System.out.println(ex.getMessage());
         }
     }
-
 }
