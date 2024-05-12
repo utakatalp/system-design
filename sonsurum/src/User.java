@@ -1,5 +1,5 @@
 public class User {
-    private String userName;
+    private String apartmentNumber;
     private String name;
     private String password;
     private double balance;
@@ -18,20 +18,20 @@ public class User {
     }
 
     private int ID;
-    public User(String userName, String name, String password, double balance,int ID) {
-        this.userName = userName;
+    public User(String apartmentNumber, String name, String password, double balance, int ID) {
+        this.apartmentNumber = apartmentNumber;
         this.name = name;
         this.password = password;
         this.balance =balance;
         this.ID=ID;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getApartmentNumber() {
+        return apartmentNumber;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setApartmentNumber(String apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
     }
 
     public String getName() {

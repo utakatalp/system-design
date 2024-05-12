@@ -82,7 +82,9 @@ public class ApartmentResidentUI extends JFrame{
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                dispose();
+                new Dashboard();
+                //System.exit(0);
             }
         });
         updateBalanceButton.addActionListener(new ActionListener() {

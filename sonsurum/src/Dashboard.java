@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 //asdadsasdsddas
 public class Dashboard extends JFrame{
     private JPanel mainPanel;
-    private JButton yöneticiButton;
-    private JButton kullanıcıButton;
+    private JButton adminButton;
+    private JButton residentButton;
     Dashboard(){
         setContentPane(mainPanel);
         setTitle("Toplu Konut Yönetim Sistemi");
@@ -14,14 +14,14 @@ public class Dashboard extends JFrame{
         setSize(300,300);
         setLocationRelativeTo(null);
         setVisible(true);
-        yöneticiButton.addActionListener(new ActionListener() {
+        adminButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new AdminLoginUI();
                 dispose();
             }
         });
-        kullanıcıButton.addActionListener(new ActionListener() {
+        residentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new ResidentLoginUI();

@@ -25,7 +25,9 @@ public class AdministratorUI extends JFrame{
         logoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                dispose();
+                new Dashboard();
+                //System.exit(0);
             }
         });
         announcementButton.addActionListener(new ActionListener() {

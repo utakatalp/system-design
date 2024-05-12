@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class updateDueUI extends JFrame{
     private JPanel mainPanel;
@@ -29,6 +30,8 @@ public class updateDueUI extends JFrame{
         });
     }
     public void setDebtforAllUsers(double fee) throws SQLException {
+        LocalDate today = LocalDate.now();
+        int month = today.getMonthValue();
         String SQL = "SELECT * FROM users";
         try(Connection conn = new DatabaseConnection().connect2();
             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
@@ -36,7 +39,7 @@ public class updateDueUI extends JFrame{
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 int id = rs.getInt("userid");
-                createDue due = new createDue(id,fee,7);
+                createDue due = new createDue(id,fee,month);
                 due.createDebtRecord();
             }
 
@@ -47,7 +50,7 @@ public class updateDueUI extends JFrame{
         try(Connection conn = new DatabaseConnection().connect2();
             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
             pstmt.setDouble(1,fee);
-            pstmt.setInt(2,7);
+            pstmt.setInt(2,month);
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
                 System.out.println("The Debts are updated for all residents.");

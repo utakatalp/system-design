@@ -16,12 +16,9 @@ public class root {
             }
         }
         user = registration.getUser();
-        System.out.println(user.getUserName() + user.getName() + new String(user.getPassword()));
+        System.out.println(user.getApartmentNumber() + user.getName() + new String(user.getPassword()));
     }
-    //registration.setUserReadyListener(user -> {
-    // This code will run once the user is set
-    //System.out.println(user.getUserName() + user.getName() + new String(user.getPassword()));
-    //});
+
     public static void main(String[] args) {
         new root();
     }
