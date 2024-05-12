@@ -4,7 +4,7 @@ import java.sql.*;
 public class dispSuggestionsUI extends JFrame{
     private JList sugggestionsList;
     private JPanel mainPanel;
-    private DefaultListModel<String> listModel;
+    private DefaultListModel<String> listModel1;
     public dispSuggestionsUI(){
         setContentPane(mainPanel);
         setTitle("Simple GUI App");
@@ -12,7 +12,12 @@ public class dispSuggestionsUI extends JFrame{
         setSize(500,900);
         setLocationRelativeTo(null);
         setVisible(true);
-        listModel = new DefaultListModel<>();
+        listModel1 = listingSuggestions();
+        sugggestionsList.setModel(listModel1);
+
+    }
+    private DefaultListModel<String> listingSuggestions(){
+        DefaultListModel<String> listModel = new DefaultListModel<>();
         Connection conn = new DatabaseConnection().connect2();
 
         Statement stmt = null;
@@ -53,6 +58,7 @@ public class dispSuggestionsUI extends JFrame{
                 System.out.println(e.getMessage());
             }
         }
-        sugggestionsList.setModel(listModel);
+        return listModel;
     }
 }
+
