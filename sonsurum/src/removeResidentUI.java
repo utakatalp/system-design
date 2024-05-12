@@ -28,20 +28,30 @@ public class removeResidentUI extends JFrame{
     public void removeResident() {
         Connection conn = new DatabaseConnection().connect2();
 
-        String sql = "DELETE FROM users WHERE apartmentnumber = ?;";
+        String sql = "DELETE FROM users WHERE apartmentnumber = ?";
 
         try {
             PreparedStatement pstmt = conn.prepareStatement(sql);
 
             pstmt.setString(1,apartmentNumber.getText());
 
-            int affectedRowCount = pstmt.executeUpdate();
-
-            if (affectedRowCount > 0) {
-                System.out.println("Site sakini başarıyla silindi.");
-            } else {
-                System.out.println("Site sakini silinemedi.");
+            try {
+                int affectedRowCount = pstmt.executeUpdate();
+                if (affectedRowCount > 0) {
+                    System.out.println("Site sakini başarıyla silindi.");
+                    JOptionPane.showMessageDialog(this,"Kişi başarıyla silindi.","Yönetim",JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                } else {
+                    System.out.println("Site sakini silinemedi.");
+                }
             }
+            catch (SQLException e2){
+                System.out.println("Kişinin hala borcu var.");
+                JOptionPane.showMessageDialog(this,"Kişinin hala borcu olduğu için silinemiyor.","Yönetim",JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+            }
+
+
 
         } catch (SQLException e2) {
             e2.printStackTrace();
