@@ -19,28 +19,35 @@ public class makingAnnouncementUI extends JFrame{
         makeAnnouncementButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Connection conn = new DatabaseConnection().connect2();
-
-                String sql = "INSERT INTO announcements(announcement) VALUES(?)";
-
-                try {
-                    PreparedStatement pstmt = conn.prepareStatement(sql);
-
-                    pstmt.setString(1,anounceField.getText());
-
-                    int etkilenenSatirSayisi = pstmt.executeUpdate();
-
-                    if (etkilenenSatirSayisi > 0) {
-                        System.out.println("Duyuru başarıyla eklendi.");
-                    } else {
-                        System.out.println("Duyuru eklenemedi.");
-                    }
-
-                } catch (SQLException e2) {
-                    e2.printStackTrace();
-                }
+                addAnnouncementIntoDB(anounceField.getText());
 
             }
         });
+    }
+    public void addAnnouncementIntoDB(String text){
+        Connection conn = new DatabaseConnection().connect2();
+
+        String sql = "INSERT INTO announcements(announcement) VALUES(?)";
+
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1,text);
+
+            int etkilenenSatirSayisi = pstmt.executeUpdate();
+
+            if (etkilenenSatirSayisi > 0) {
+                System.out.println("Duyuru başarıyla eklendi.");
+                JOptionPane.showMessageDialog(this,"Duyuru başarıyla eklendi.","Duyuru",JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+            } else {
+                System.out.println("Duyuru eklenemedi.");
+                JOptionPane.showMessageDialog(this,"Duyuru eklenemedi.","Duyuru",JOptionPane.INFORMATION_MESSAGE);
+
+            }
+
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
     }
 }
