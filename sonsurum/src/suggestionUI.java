@@ -19,29 +19,32 @@ public class suggestionUI extends JFrame{
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                sendSuggestion();
 
-                Connection conn = new DatabaseConnection().connect2();
-
-                String sql = "INSERT INTO suggestions(suggestion) VALUES(?)";
-
-                try {
-                    PreparedStatement pstmt = conn.prepareStatement(sql);
-
-                    pstmt.setString(1,suggestionTextField.getText());
-
-                    int etkilenenSatirSayisi = pstmt.executeUpdate();
-
-                    if (etkilenenSatirSayisi > 0) {
-                        System.out.println("Öneri başarıyla eklendi.");
-                    } else {
-                        System.out.println("Öneri eklenemedi.");
-                    }
-
-                } catch (SQLException e2) {
-                    e2.printStackTrace();
-                }
 
             }
         });
+    }
+    public void sendSuggestion(){
+        Connection conn = new DatabaseConnection().connect2();
+
+        String sql = "INSERT INTO suggestions(suggestion) VALUES(?)";
+
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1,suggestionTextField.getText());
+
+            int etkilenenSatirSayisi = pstmt.executeUpdate();
+
+            if (etkilenenSatirSayisi > 0) {
+                System.out.println("Öneri başarıyla eklendi.");
+            } else {
+                System.out.println("Öneri eklenemedi.");
+            }
+
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
     }
 }
