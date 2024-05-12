@@ -40,10 +40,6 @@ public class ResidentLoginUI extends JFrame {
         Panel2 = panel2;
     }
 
-
-
-
-
     public JButton getGirişYapButton() {
         return loginButton;
     }
@@ -78,30 +74,27 @@ public class ResidentLoginUI extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                //JOptionPane.showMessageDialog(Main.this, "meraba " + firstName);
-                User user = new userLogin().authenticateUser(textField1.getText(), Arrays.toString(passwordField1.getPassword()));
-                //System.out.println("Hoşgeldiniz "+user.getName());
-                if (user != null) {
-                    JOptionPane.showMessageDialog(ResidentLoginUI.this,
-                            "Hoşgeldiniz, " + user.getName(),
-                            "Giriş Başarılı",
-                            JOptionPane.INFORMATION_MESSAGE);
-                    new ApartmentResidentUI(user);
-                    dispose(); // Giriş başarılıysa pencereyi kapat
-                } else {
-                    JOptionPane.showMessageDialog(ResidentLoginUI.this,
-                            "Giriş bilgileri hatalı. Lütfen tekrar deneyin.",
-                            "Giriş Başarısız",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-
-                dispose();
+                displayUserLoginScreen();
             }
         });
-
     }
-
+    public void displayUserLoginScreen() {
+        User user = new userLogin().authenticateUser(textField1.getText(), Arrays.toString(passwordField1.getPassword()));
+        if (user != null) {
+            JOptionPane.showMessageDialog(ResidentLoginUI.this,
+                    "Hoşgeldiniz, " + user.getName(),
+                    "Giriş Başarılı",
+                    JOptionPane.INFORMATION_MESSAGE);
+            new ApartmentResidentUI(user);
+            dispose(); // Giriş başarılıysa pencereyi kapat
+        } else {
+            JOptionPane.showMessageDialog(ResidentLoginUI.this,
+                    "Giriş bilgileri hatalı. Lütfen tekrar deneyin.",
+                    "Giriş Başarısız",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        dispose();
+    }
     public static void main(String[] args) {
         new ResidentLoginUI();
             }

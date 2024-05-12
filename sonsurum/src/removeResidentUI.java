@@ -35,9 +35,9 @@ public class removeResidentUI extends JFrame{
 
             pstmt.setString(1,apartmentNumber.getText());
 
-            int etkilenenSatirSayisi = pstmt.executeUpdate();
+            int affectedRowCount = pstmt.executeUpdate();
 
-            if (etkilenenSatirSayisi > 0) {
+            if (affectedRowCount > 0) {
                 System.out.println("Site sakini başarıyla silindi.");
             } else {
                 System.out.println("Site sakini silinemedi.");

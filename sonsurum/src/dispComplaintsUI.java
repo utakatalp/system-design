@@ -8,7 +8,6 @@ public class dispComplaintsUI extends JFrame{
     private ArrayList<String> complaints = new ArrayList<>();
     private DefaultListModel<String> listModel;
 
-
     public dispComplaintsUI() {
         setContentPane(mainPanel);
         setTitle("Toplu Konut Yönetim Sistemi");
