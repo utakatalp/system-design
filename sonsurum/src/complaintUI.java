@@ -22,30 +22,34 @@ public class complaintUI extends JFrame{
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                Connection conn = new DatabaseConnection().connect2();
-
-                String sql = "INSERT INTO complaints(complaint) VALUES(?)";
-
-                try {
-                    PreparedStatement pstmt = conn.prepareStatement(sql);
-
-                    pstmt.setString(1,complaintTextField.getText());
-
-                    int etkilenenSatirSayisi = pstmt.executeUpdate();
-
-                    if (etkilenenSatirSayisi > 0) {
-                        System.out.println("Şikayet başarıyla eklendi.");
-                    } else {
-                        System.out.println("Şikayet eklenemedi.");
-                    }
-
-                } catch (SQLException e2) {
-                    e2.printStackTrace();
-                }
-
+                complaintUILogic();
             }
         });
 
     }
+
+    public void complaintUILogic() {
+        Connection conn = new DatabaseConnection().connect2();
+
+        String sql = "INSERT INTO complaints(complaint) VALUES(?)";
+
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setString(1,complaintTextField.getText());
+
+            int etkilenenSatirSayisi = pstmt.executeUpdate();
+
+            if (etkilenenSatirSayisi > 0) {
+                System.out.println("Şikayet başarıyla eklendi.");
+            } else {
+                System.out.println("Şikayet eklenemedi.");
+            }
+
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
+
+    }
 }
+
