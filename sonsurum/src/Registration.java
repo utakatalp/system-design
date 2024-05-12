@@ -19,9 +19,6 @@ public class Registration extends JFrame{
         void onUserReady(User user);
     }
     private UserReadyListener listener;
-
-
-
     private User user;
     public Registration(){
         setContentPane(registration);
@@ -33,22 +30,14 @@ public class Registration extends JFrame{
         registrationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //user = new User(userName.getText(), name.getText(), password.getPassword());
                 userSignup asd = new userSignup();
                 asd.registerUser(userName.getText(),name.getText(), Arrays.toString(password.getPassword()));
                 dispose();
-                //System.out.println(user.getUserName());
-                //System.out.println(user.getPassword());
-                //System.out.println(user.getName());
             }
-
         });
-
     }
-
     public User getUser() {
         return user;
     }
-
 }
 
