@@ -9,32 +9,26 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class paymentUI extends JFrame{
-    private JLabel sumofDebts;
+
     private JComboBox dueComboBox;
     private JPanel mainPanel;
     private JButton payButton;
     private JLabel balanceLabel;
     private selectFromDatabase sfd;
-    private int ID;
+
     private Debt selectedDebt;
     private User user;
     public paymentUI(User user) throws SQLException {
         this.user=user;
-        sfd = new selectFromDatabase(user.getID());
-        ArrayList<Debt> debts = sfd.func();
-        dueComboBox.addItem("Aidat seçin.");
-        for(Debt debt : debts)
-        {
-            dueComboBox.addItem(debt);
-        }
-
-        balanceLabel.setText("Bakiye: " + Double.toString(user.getBalance())+ " TL");
         setContentPane(mainPanel);
         setTitle("Simple GUI App");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300,300);
         setLocationRelativeTo(null);
         setVisible(true);
+        balanceLabel.setText("Bakiye: " + Double.toString(user.getBalance())+ " TL");
+        addingItemsToComboBox();
+
         dueComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,21 +47,7 @@ public class paymentUI extends JFrame{
                 {
                     if(user.getBalance()>=selectedDebt.getFee())
                     {
-                        user.setBalance(user.getBalance()-selectedDebt.getFee());
-                        updateBalance();
-                        deleteDebtfromDB();
-                        dispose();
-                        JOptionPane.showMessageDialog(paymentUI.this,
-                                "Ödeme başarıyla yapıldı.",
-                                "Ödeme",
-                                JOptionPane.INFORMATION_MESSAGE);
-
-                        dispose();
-                        try {
-                            new paymentUI(user);
-                        } catch (SQLException ex) {
-                            throw new RuntimeException(ex);
-                        } // Giriş başarılıysa pencereyi kapat
+                        payingViaComboBox();
                     }
                     else {
                         JOptionPane.showMessageDialog(paymentUI.this,
@@ -83,7 +63,24 @@ public class paymentUI extends JFrame{
 
         });
     }
+    public void payingViaComboBox(){
+        user.setBalance(user.getBalance()-selectedDebt.getFee());
+        updateBalance();
+        deleteDebtfromDB();
+        dispose();
+        JOptionPane.showMessageDialog(paymentUI.this,
+                "Ödeme başarıyla yapıldı.",
+                "Ödeme",
+                JOptionPane.INFORMATION_MESSAGE);
 
+        dispose();
+        try {
+            new paymentUI(user);
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        } // Giriş başarılıysa pencereyi kapat
+
+    }
     public void updateBalance() {
         String SQL = "UPDATE users SET balance = ? WHERE userid = ?";
         try (Connection conn = new DatabaseConnection().connect2();
@@ -98,6 +95,15 @@ public class paymentUI extends JFrame{
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
+        }
+    }
+    public void addingItemsToComboBox(){
+        sfd = new selectFromDatabase(user.getID());
+        ArrayList<Debt> debts = sfd.debtListFunc();
+        dueComboBox.addItem("Aidat seçin.");
+        for(Debt debt : debts)
+        {
+            dueComboBox.addItem(debt);
         }
     }
     public void deleteDebtfromDB(){

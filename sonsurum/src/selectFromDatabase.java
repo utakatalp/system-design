@@ -9,9 +9,10 @@ public class selectFromDatabase {
     private int ID;
     public selectFromDatabase(int ID)
     {
+
         this.ID=ID;
     }
-    public ArrayList<Debt> func(){
+    public ArrayList<Debt> debtListFunc(){
         String SQL = "SELECT * FROM debts WHERE userid = ?";
         ArrayList<Debt> debts = new ArrayList<>();
         try(Connection conn = new DatabaseConnection().connect2();
