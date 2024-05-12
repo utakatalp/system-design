@@ -13,11 +13,17 @@ public class User {
         this.balance = balance;
     }
 
-    public User(String userName, String name, String password, double balance) {
+    public int getID() {
+        return ID;
+    }
+
+    private int ID;
+    public User(String userName, String name, String password, double balance,int ID) {
         this.userName = userName;
         this.name = name;
         this.password = password;
-        this.balance = balance;
+        this.balance =balance;
+        this.ID=ID;
     }
 
     public String getUserName() {

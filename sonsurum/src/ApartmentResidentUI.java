@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class ApartmentResidentUI extends JFrame{
     private JButton aidatOdeButton;
-    private JButton dispDebtButton;
+
     private JPanel mainPanel;
 
     public void setUsername(String username) {
@@ -22,8 +22,8 @@ public class ApartmentResidentUI extends JFrame{
     private JPanel innerPanel;
     private JList<String> announceList;
     private JScrollPane scrollpane;
-    private JLabel balanceField;
     private JLabel welcomeLabel;
+    private JButton updateBalanceButton;
     private JPanel panel;
     private ResidentLoginUI main2;
     private DefaultListModel<String> listModel;
@@ -46,10 +46,55 @@ public class ApartmentResidentUI extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         listModel = new DefaultListModel<>();
-
-        balanceField.setText("Bakiye: "+user.getBalance());
         welcomeLabel.setText("Hoşgeldiniz: "+user.getName());
+        showAnnouncements();
 
+        aidatOdeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    new paymentUI(user);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+
+            }
+        });
+
+        changePassword.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new changingPasswordUI(user);
+            }
+        });
+        complaintButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new complaintUI();
+            }
+        });
+        suggestionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new suggestionUI();
+            }
+        });
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        updateBalanceButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                new updateBalanceUI(user);
+            }
+        });
+    }
+    private void showAnnouncements()
+    {
         Connection conn = new DatabaseConnection().connect2();
 
         Statement stmt = null;
@@ -92,50 +137,11 @@ public class ApartmentResidentUI extends JFrame{
         }
         announceList.setModel(listModel);
         scrollpane.setViewportView(announceList);
-        aidatOdeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new paymentUI();
-            }
-        });
-        dispDebtButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new displayDebtUI();
-            }
-        });
-        changePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new changingPasswordUI();
-            }
-        });
-        complaintButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new complaintUI();
-            }
-        });
-        suggestionButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new suggestionUI();
-            }
-        });
-        logoutButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
     }
 
 
 
-    public JPanel getPanel()
-    {
-        return panel;
-    }
+
 
 
 

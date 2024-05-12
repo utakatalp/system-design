@@ -9,7 +9,7 @@ public class Dashboard extends JFrame{
     Dashboard(){
         setContentPane(mainPanel);
         setTitle("Simple GUI App");
-        //setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(300,300);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -24,7 +24,6 @@ public class Dashboard extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 new ResidentLoginUI();
-
                 dispose();
             }
         });

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c074bf41-412a-41c9-80bf-2240fb7cfa9c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgresql-42.7.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminLoginUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminLoginUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdministratorUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdministratorUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApartmentResidentUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ApartmentResidentUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Registration.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResidentLoginUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ResidentLoginUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/abs/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/adminLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/changingPasswordUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/changingPasswordUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/complaintUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/complaintUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/connectionAttempt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dispComplaintsUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dispComplaintsUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dispSuggestionsUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dispSuggestionsUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/displayDebtUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/displayDebtUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makingAnnouncementUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makingAnnouncementUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paymentUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/paymentUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/removeResidentUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/removeResidentUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scanningAllDebtsUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scanningAllDebtsUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/suggestionUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/suggestionUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/type/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/administration/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/resident/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/updateDueUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/updateDueUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userSignup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2funMjn87FAL1vRcX6zboA1J5o7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Dashboard.executor": "Run",
+    "Application.Login (1).executor": "Run",
+    "Application.Login (2).executor": "Run",
+    "Application.Login (3).executor": "Run",
+    "Application.Login (4).executor": "Run",
+    "Application.Login (5).executor": "Debug",
+    "Application.Login.executor": "Run",
+    "Application.LoginUI (1).executor": "Run",
+    "Application.LoginUI.executor": "Run",
+    "Application.Main (1).executor": "Run",
+    "Application.Main (2).executor": "Run",
+    "Application.Main (3).executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Registration (1).executor": "Run",
+    "Application.Registration (2).executor": "Run",
+    "Application.Registration.executor": "Run",
+    "Application.SiteSakini.executor": "Run",
+    "Application.root.executor": "Run",
+    "Application.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/alpsahin/Desktop/GUISystemAnalysis/system-design/sonsurum",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/alpsahin/Desktop/GUISystemAnalysis/untitled/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alpsahin\Desktop\GUISystemAnalysis\untitled\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alpsahin\Desktop\GUISystemAnalysis\untitled" />
+      <recent name="C:\Users\alpsahin\Desktop\GUISystemAnalysis\untitled\src" />
+      <recent name="C:\Users\alpsahin\Desktop\GUISystemAnalysis\untitled\src\ui\resident" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Dashboard">
+    <configuration name="Dashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Dashboard" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Login" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Login" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginUI" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginUI" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LoginUI" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResidentLoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ResidentLoginUI" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResidentLoginUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ResidentLoginUI" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="untitled" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Dashboard" />
+        <item itemvalue="Application.ResidentLoginUI" />
+        <item itemvalue="Application.test" />
+        <item itemvalue="Application.ResidentLoginUI" />
+        <item itemvalue="Application.ResidentLoginUI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-temurin-21.0.1-f644763e9732-a3c558b9" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c074bf41-412a-41c9-80bf-2240fb7cfa9c" name="Changes" comment="" />
+      <created>1714659790600</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714659790600</updated>
+      <workItem from="1714659791646" duration="6684000" />
+      <workItem from="1714768332729" duration="8296000" />
+      <workItem from="1714913212102" duration="3167000" />
+      <workItem from="1715106051139" duration="369000" />
+      <workItem from="1715107144160" duration="17000" />
+      <workItem from="1715262223793" duration="2702000" />
+      <workItem from="1715266653485" duration="394000" />
+      <workItem from="1715348070986" duration="15267000" />
+      <workItem from="1715423054541" duration="4666000" />
+      <workItem from="1715462185727" duration="2024000" />
+      <workItem from="1715465435094" duration="4654000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

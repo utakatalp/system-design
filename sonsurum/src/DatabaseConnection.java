@@ -7,7 +7,7 @@ import static javax.management.remote.JMXConnectorFactory.connect;
 public class DatabaseConnection {
     private String url = "jdbc:postgresql://host:5432/postgres";
     private String user = "postgres";
-    private String password = "1234";
+    private String password = "12345";
 
     public Connection connect2() {
         Connection conn = null;

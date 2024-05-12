@@ -16,7 +16,8 @@ public class userLogin {
 
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
-                user = new User(rs.getString("apartmentNumber"),rs.getString("name"), rs.getString("password"), rs.getFloat("balance"));
+                user = new User(rs.getString("apartmentNumber"),rs.getString("name"), rs.getString("password"), rs.getFloat("balance"),rs.getInt("userid"));
+
                 return user;
             }
 
