@@ -55,6 +55,8 @@ public class changingPasswordUI extends JFrame{
                     int affectedRows = pstmt.executeUpdate();
                     if (affectedRows > 0) {
                         System.out.println("An existing user's password was updated successfully.");
+                        JOptionPane.showMessageDialog(this,"Şifre başarıyla değiştirildi.","Şifre",JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
                     } else {
                         System.out.println("No update was made. Check the user ID and data integrity.");
                     }

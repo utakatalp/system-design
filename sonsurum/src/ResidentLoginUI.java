@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Arrays;
 
 public class ResidentLoginUI extends JFrame {
@@ -74,11 +75,15 @@ public class ResidentLoginUI extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                displayUserLoginScreen();
+                try {
+                    displayUserLoginScreen();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
-    public void displayUserLoginScreen() {
+    public void displayUserLoginScreen() throws SQLException {
         User user = new userLogin().authenticateUser(textField1.getText(), Arrays.toString(passwordField1.getPassword()));
         if (user != null) {
             JOptionPane.showMessageDialog(ResidentLoginUI.this,

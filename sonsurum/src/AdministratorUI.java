@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class AdministratorUI extends JFrame{
     private JPanel mainPanel;
@@ -59,19 +60,27 @@ public class AdministratorUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Registration();
-                dispose();
+
             }
         });
         dispComplaintsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new dispComplaintsUI();
+                try {
+                    new dispComplaintsUI();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         dispSuggestionsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new dispSuggestionsUI();
+                try {
+                    new dispSuggestionsUI();
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
 
             }
         });

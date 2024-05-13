@@ -37,7 +37,7 @@ public class ApartmentResidentUI extends JFrame{
         this.user = user;
     }
 
-    public ApartmentResidentUI(User user) {
+    public ApartmentResidentUI(User user) throws SQLException {
 
         setContentPane(mainPanel);
         setTitle("Toplu Konut Yönetim Sistemi");
@@ -95,10 +95,8 @@ public class ApartmentResidentUI extends JFrame{
             }
         });
     }
-    private void showAnnouncements()
-    {
+    private void showAnnouncements() throws SQLException {
         Connection conn = new DatabaseConnection().connect2();
-
         Statement stmt = null;
         try {
             stmt = conn.createStatement();
@@ -107,36 +105,17 @@ public class ApartmentResidentUI extends JFrame{
         }
         ResultSet rs1;
         try {
-            rs1 = stmt.executeQuery("SELECT COUNT(*) FROM announcements");
+            rs1 = stmt.executeQuery("SELECT * FROM announcements");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        int boundList = 0;
 
-        try {
-            if (rs1.next()) {
-                boundList = rs1.getInt(1);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while(rs1.next())
+        {
+            listModel.addElement(rs1.getString("announcement"));
         }
 
-        String SQL = "SELECT * FROM announcements WHERE messageid = ?";
-        for (int i = 1; i <= boundList; i++) {
-            try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-
-                pstmt.setInt(1, i);
-
-                ResultSet rs = pstmt.executeQuery();
-                if (rs.next()) {
-                    listModel.addElement(rs.getString("announcement"));
-
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
         announceList.setModel(listModel);
         scrollpane.setViewportView(announceList);
     }

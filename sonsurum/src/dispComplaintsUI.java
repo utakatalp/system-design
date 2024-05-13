@@ -8,7 +8,7 @@ public class dispComplaintsUI extends JFrame{
     private ArrayList<String> complaints = new ArrayList<>();
     private DefaultListModel<String> listModel;
 
-    public dispComplaintsUI() {
+    public dispComplaintsUI() throws SQLException {
         setContentPane(mainPanel);
         setTitle("Toplu Konut Yönetim Sistemi");
         //setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -18,7 +18,7 @@ public class dispComplaintsUI extends JFrame{
         showAllComplaints();
     }
 
-    public void showAllComplaints() {
+    public void showAllComplaints() throws SQLException {
         listModel = new DefaultListModel<>();
 
         Connection conn = new DatabaseConnection().connect2();
@@ -31,33 +31,14 @@ public class dispComplaintsUI extends JFrame{
         }
         ResultSet rs1;
         try {
-            rs1 = stmt.executeQuery("SELECT COUNT(*) FROM complaints");
+            rs1 = stmt.executeQuery("SELECT * FROM complaints");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        int k = 0;
-
-        try {
-            if (rs1.next()) {
-                k = rs1.getInt(1);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        String SQL = "SELECT * FROM complaints WHERE messageid = ?";
-        for (int i = 1; i < k+1; i++) {
-            try (PreparedStatement pstmt = conn.prepareStatement(SQL)) {
-                pstmt.setInt(1, i);
-
-                ResultSet rs = pstmt.executeQuery();
-                if (rs.next()) {
-                    listModel.addElement(rs.getString("complaint"));
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
+        while(rs1.next())
+        {
+            listModel.addElement(rs1.getString("complaint"));
         }
         complaintList.setModel(listModel);
     }

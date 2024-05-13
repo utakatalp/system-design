@@ -34,11 +34,12 @@ public class Registration extends JFrame{
         registrationButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(usernameExists(userName.getText()))
+                if(!usernameExists(userName.getText()))
                 {
                     userSignup asd = new userSignup();
                     asd.registerUser(userName.getText(),name.getText(), Arrays.toString(password.getPassword()));
                     JOptionPane.showMessageDialog(Registration.this,"Kayıt başarılı.","Kayıt",JOptionPane.INFORMATION_MESSAGE);
+
 
                 }
                 else {
@@ -50,7 +51,7 @@ public class Registration extends JFrame{
         });
     }
     public boolean usernameExists(String username) {
-        String SQL = "SELECT username FROM users WHERE username = ?";
+        String SQL = "SELECT apartmentnumber FROM users WHERE apartmentnumber = ?";
         try (Connection conn = new DatabaseConnection().connect2();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {
             pstmt.setString(1, username);
